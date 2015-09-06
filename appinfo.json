@@ -9,6 +9,26 @@
     "resources": {
         "media": [
             {
+                "file": "images/tic_icon.png",
+                "name": "tic_icon",
+                "type": "png"
+            },
+            {
+                "file": "images/play_icon.png",
+                "name": "play_icon",
+                "type": "png"
+            },
+            {
+                "file": "images/list_icon.png",
+                "name": "list_icon",
+                "type": "png"
+            },
+            {
+                "file": "images/cross_icon.png",
+                "name": "cross_icon",
+                "type": "png"
+            },
+            {
                 "file": "images/water_black.png",
                 "name": "water_icon",
                 "type": "png"

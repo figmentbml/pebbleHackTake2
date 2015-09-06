@@ -9,6 +9,31 @@
     "resources": {
         "media": [
             {
+                "file": "images/urban_com_new.png",
+                "name": "urban_com_new",
+                "type": "png"
+            },
+            {
+                "file": "images/water_com.png",
+                "name": "water_com",
+                "type": "png"
+            },
+            {
+                "file": "images/urban_com.png",
+                "name": "urban_com",
+                "type": "png"
+            },
+            {
+                "file": "images/tree_com.png",
+                "name": "tree_com",
+                "type": "png"
+            },
+            {
+                "file": "images/other_com.png",
+                "name": "other_com",
+                "type": "png"
+            },
+            {
                 "file": "images/tic_icon.png",
                 "name": "tic_icon",
                 "type": "png"

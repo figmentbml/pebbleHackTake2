@@ -4,12 +4,13 @@
         ""
     ],
     "companyName": "beth.jaswa@gmail.com",
-    "longName": "companionsTake2",
+    "longName": "EXPLOREIANS",
     "projectType": "native",
     "resources": {
         "media": [
             {
                 "file": "images/slash_logo.png",
+                "menuIcon": true,
                 "name": "LOGO",
                 "type": "png"
             },
@@ -96,7 +97,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "companionsTake2",
+    "shortName": "EXPLOREIANS",
     "targetPlatforms": [
         "basalt"
     ],

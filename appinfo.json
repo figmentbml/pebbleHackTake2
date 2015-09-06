@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "beth.jaswa@gmail.com",
+    "longName": "companionsTake2",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "companionsTake2",
+    "uuid": "10f3f967-3f8c-4cc8-b794-053df98b08bc",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}

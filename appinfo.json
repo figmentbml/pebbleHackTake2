@@ -7,7 +7,28 @@
     "longName": "companionsTake2",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "images/water_black.png",
+                "name": "water_icon",
+                "type": "png"
+            },
+            {
+                "file": "images/urban_black.png",
+                "name": "urban_icon",
+                "type": "png"
+            },
+            {
+                "file": "images/trees_black.png",
+                "name": "trees_icon",
+                "type": "png"
+            },
+            {
+                "file": "images/question_black.png",
+                "name": "other_icon",
+                "type": "png"
+            }
+        ]
     },
     "sdkVersion": "3",
     "shortName": "companionsTake2",

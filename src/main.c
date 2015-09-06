@@ -2,6 +2,8 @@
 #include <get_terrain.h>
 #include <gps_strap.h>
   
+#define COM_WAIT  10000   // ms
+  
 static Window *s_main_window;
 static ActionBarLayer *s_action_bar_layer;
 static TextLayer *companion_text_layer;
@@ -14,6 +16,8 @@ static uint16_t get_num_rows_callback(MenuLayer *menu_layer, uint16_t section_in
   return NUM_WINDOWS;
 }
 static Window *category_list_window;
+
+static void terrain_thread();
 
 static Window *found_window;
 static ActionBarLayer *found_action_bar_layer;
@@ -38,7 +42,7 @@ static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
 }
 
 static void found_window_unload(Window *window) {
-  //menu_layer_destroy(s_menu_layer);
+  app_timer_register(COM_WAIT, terrain_thread, NULL);
 }
 
 static void found_window_load(Window *window) {
@@ -47,6 +51,7 @@ static void found_window_load(Window *window) {
 
   bitmap_layer = bitmap_layer_create(GRect(15, 80, 80, 80));
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Loading bitmap: %d", terrain);
+  
   GBitmap *bitmap;
   if ( terrain == URBAN ) {
     bitmap = gbitmap_create_with_resource(RESOURCE_ID_URBAN_COM);
@@ -91,18 +96,18 @@ static void category_list_window_load(Window *window) {
   text_layer_set_font(companion_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   layer_add_child(window_layer, text_layer_get_layer(companion_text_layer));
 
-  list_menu_layer = menu_layer_create(bounds);
-  menu_layer_set_click_config_onto_window(list_menu_layer, category_list_window);
-  menu_layer_set_callbacks(list_menu_layer, NULL, (MenuLayerCallbacks) {
-      .get_num_rows = (MenuLayerGetNumberOfRowsInSectionsCallback)get_num_rows_callback,
+//  list_menu_layer = menu_layer_create(bounds);
+//  menu_layer_set_click_config_onto_window(list_menu_layer, category_list_window);
+//   menu_layer_set_callbacks(list_menu_layer, NULL, (MenuLayerCallbacks) {
+//       .get_num_rows = (MenuLayerGetNumberOfRowsInSectionsCallback)get_num_rows_callback,
 //       .draw_row = (MenuLayerDrawRowCallback)draw_row_callback,
 //       .get_cell_height = (MenuLayerGetCellHeightCallback)get_cell_height_callback,
 //       .select_click = (MenuLayerSelectCallback)select_callback,
 //       .draw_header = (MenuLayerDrawHeaderCallback)draw_header_callback,
 //       .get_header_height = (MenuLayerGetHeaderHeightCallback)get_header_height_callback,
 //       .get_num_sections = (MenuLayerGetNumberOfSectionsCallback)get_num_sections_callback,
-  });
-  layer_add_child(window_layer, menu_layer_get_layer(list_menu_layer));
+//  });
+//  layer_add_child(window_layer, menu_layer_get_layer(list_menu_layer));
 }
 
 static void click_config_provider(void *context) {
@@ -152,10 +157,11 @@ void terrain_thread() {
     });
     
     //turn this on to go to screen with companion found
+    vibes_short_pulse();
     window_stack_push(found_window, true);
+  } else {
+    app_timer_register(COM_WAIT, terrain_thread, NULL);
   }
-  
-  app_timer_register(10000, terrain_thread, NULL);
 }
   
 static void init() {
@@ -174,7 +180,7 @@ static void deinit() {
 int main() {
   gps_init();
   init();
-  app_timer_register(1000, terrain_thread, NULL);
+  app_timer_register(COM_WAIT, terrain_thread, NULL);
   app_event_loop();
   deinit();
   gps_deinit();

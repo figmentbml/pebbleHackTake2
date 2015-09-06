@@ -9,53 +9,58 @@
     "resources": {
         "media": [
             {
-                "file": "images/urban_com_new.png",
-                "name": "urban_com_new",
+                "file": "images/slash_logo.png",
+                "name": "LOGO",
                 "type": "png"
             },
             {
-                "file": "images/water_com.png",
-                "name": "water_com",
+                "file": "images/other_cat_icon.png",
+                "name": "OTHER_COM",
                 "type": "png"
             },
             {
-                "file": "images/urban_com.png",
-                "name": "urban_com",
+                "file": "images/tree_companion.png",
+                "name": "TREE_COM",
                 "type": "png"
             },
             {
-                "file": "images/tree_com.png",
-                "name": "tree_com",
+                "file": "images/urban_companion.png",
+                "name": "URBAN_COM",
                 "type": "png"
             },
             {
-                "file": "images/other_com.png",
-                "name": "other_com",
+                "file": "images/water_companion.png",
+                "name": "WATER_COM",
                 "type": "png"
             },
             {
-                "file": "images/tic_icon.png",
-                "name": "tic_icon",
+                "file": "images/icon_tree.png",
+                "name": "ICON_TREE",
                 "type": "png"
             },
             {
-                "file": "images/play_icon.png",
-                "name": "play_icon",
+                "file": "images/icon_water.png",
+                "name": "ICON_WATER",
                 "type": "png"
             },
             {
-                "file": "images/list_icon.png",
-                "name": "list_icon",
+                "file": "images/icon_urban.png",
+                "name": "ICON_URBAN",
+                "type": "png"
+            },
+            {
+                "file": "images/icon_other.png",
+                "name": "ICON_OTHER",
+                "type": "png"
+            },
+            {
+                "file": "images/question_black.png",
+                "name": "other_icon",
                 "type": "png"
             },
             {
                 "file": "images/cross_icon.png",
-                "name": "cross_icon",
-                "type": "png"
-            },
-            {
-                "file": "images/water_black.png",
-                "name": "water_icon",
+                "name": "CROSS_ICON",
                 "type": "png"
             },
             {
@@ -64,19 +69,37 @@
                 "type": "png"
             },
             {
+                "file": "images/tic_icon.png",
+                "name": "CHECK_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/water_black.png",
+                "name": "water_icon",
+                "type": "png"
+            },
+            {
+                "file": "images/list_icon.png",
+                "name": "LIST_ICON",
+                "type": "png"
+            },
+            {
                 "file": "images/trees_black.png",
                 "name": "trees_icon",
                 "type": "png"
             },
             {
-                "file": "images/question_black.png",
-                "name": "other_icon",
+                "file": "images/play_icon.png",
+                "name": "play_icon",
                 "type": "png"
             }
         ]
     },
     "sdkVersion": "3",
     "shortName": "companionsTake2",
+    "targetPlatforms": [
+        "basalt"
+    ],
     "uuid": "10f3f967-3f8c-4cc8-b794-053df98b08bc",
     "versionLabel": "1.0",
     "watchapp": {
